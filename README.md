@@ -1,10 +1,10 @@
-Indian Uber Management System
-Relational Database Project (MySQL)
-📌 Project Overview
+**Indian Uber Management System** <br>
+Relational Database Project (MySQL) <br>
+📌** Project Overview** 
 
 The Indian Uber Management System is a relational database project designed to simulate a real-world ride-booking platform like Uber in India.
 
-This system efficiently manages:
+**This system efficiently manages:**
 
 👤 Users (Passengers)
 
@@ -22,16 +22,14 @@ This system efficiently manages:
 
 The project focuses on database normalization, entity relationships, and real-world ride-booking workflow implementation.
 
-🏗️ Database Architecture
+🏗️ **Database Architecture**
 
 The system consists of 7 main tables with properly defined Primary Keys and Foreign Key relationships.
   
 
-1️⃣ #**Users Table**#
+1️⃣ 👤 **Users Table**
 
 Stores passenger details.
-
-<h2>Users Table</h2>
 
 <table border="1" cellpadding="10" cellspacing="0">
     <tr>
@@ -76,11 +74,9 @@ Stores passenger details.
     </tr>
 </table>
 
-2️⃣ **Drivers Table**
+2️⃣ 🚗 **Drivers Table**
 
 Stores driver registration and verification details.
-
-<h2>Drivers Table</h2>
 
 <table border="1" cellpadding="10" cellspacing="0">
     <tr>
@@ -125,7 +121,7 @@ Stores driver registration and verification details.
     </tr>
 </table>
 
-3️⃣ 🚗 #**Vehicles Table**#
+3️⃣ 🚙 **Vehicles Table**
 
 Each driver is assigned one vehicle.
 
@@ -142,7 +138,7 @@ Each driver is assigned one vehicle.
         <tr><td>category</td><td>ENUM</td><td>UberGo / UberPremier / UberAuto / UberXL </td></tr>
     </table>
     
-4️⃣ **Trips Table (Core Table)**
+4️⃣ 🛣️ **Trips Table (Core Table)**
 
 Manages ride bookings.
 <table>
@@ -163,7 +159,7 @@ Manages ride bookings.
     </table>
 
 
-5️⃣ **Payments Table**
+5️⃣ 💳 **Payments Table**
 
 Stores transaction details.
 
@@ -181,7 +177,7 @@ Stores transaction details.
         <tr><td>amount_paid</td><td>DECIMAL(10,2)</td><td>Paid Amount</td></tr>
     </table>
     
-6️⃣ **Reviews Table**
+6️⃣ ⭐ **Reviews Table**
 
 Stores user ratings and feedback.
  <table>
@@ -196,7 +192,7 @@ Stores user ratings and feedback.
         <tr><td>feedback</td><td>TEXT</td><td>User Feedback</td></tr>
     </table>
 
-7️⃣ **Emergency Contacts Table**
+7️⃣ 🚨 **Emergency Contacts Table**
 
 Stores emergency contact details for users.
 
@@ -226,20 +222,20 @@ One Trip ➝ One Review
 
 One User ➝ Many Emergency Contacts
 
-⚙️ Key Features
+⚙️ **Key Features**
 
-✔ User registration & wallet management
-✔ Driver onboarding with Aadhaar & License verification
-✔ Vehicle assignment to drivers
-✔ Ride booking system
-✔ Distance-based fare calculation
-✔ Multiple payment options (UPI, Card, Wallet, Cash)
-✔ Trip status tracking
-✔ Driver rating & feedback system
-✔ Emergency contact support
-✔ Transaction monitoring
+✔ User registration & wallet management <br>
+✔ Driver onboarding with Aadhaar & License verification <br>
+✔ Vehicle assignment to drivers <br>
+✔ Ride booking system <br>
+✔ Distance-based fare calculation <br>
+✔ Multiple payment options  <br>
+✔ Trip status tracking <br>
+✔ Driver rating & feedback system <br>
+✔ Emergency contact support <br>
+✔ Transaction monitoring <br>
 
-📊 Business Rules Implemented
+📊 **Business Rules Implemented**
 
 Only active drivers can accept trips
 
@@ -251,57 +247,33 @@ Wallet balance auto-deducted when wallet payment selected
 
 One driver is assigned only one vehicle
 
-🛠️ Technologies Used
+🛠️ **Technologies Used**
 
 MySQL
-
 SQL (DDL & DML)
-
 ER Modeling
-
 Database Normalization
-
 Relational Database Concepts
 
-🧠 System Workflow
+🧠 **System Workflow**
 
 User registers
-
 Driver registers & vehicle assigned
-
 User books a ride
-
 Driver accepts trip
-
 Trip gets completed
-
 Payment processed
-
 User submits rating & review
 
-📈 Future Enhancements
+📷 **ER Diagram**
 
-Surge pricing algorithm
+![ER Diagram](er_diagram.png)
 
-Real-time GPS tracking
-
-Ride scheduling system
-
-Admin dashboard
-
-Driver incentive module
-
-Fraud detection system
-
-📷 ER Diagram
-
-(Add your ER diagram image here)
-
-🎯 Project Objective
+🎯 **Project Objective**
 
 To design and implement a normalized and scalable relational database system for a ride-booking platform in India that ensures data integrity, efficient relationships, and smooth ride lifecycle management.
 
-👨‍💻 Author
+👨‍💻 **Author**
 
 Vipul Alsundkar
-Software Testing Engineer | Data & BI Enthusiast
+Data & BI Enthusiast
