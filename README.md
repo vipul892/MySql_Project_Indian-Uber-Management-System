@@ -26,18 +26,54 @@ The project focuses on database normalization, entity relationships, and real-wo
 
 The system consists of 7 main tables with properly defined Primary Keys and Foreign Key relationships.
 
-1️⃣ Users Table
+1️⃣ #**Users Table**#
 
 Stores passenger details.
 
-Column Name	Data Type	Description
-user_id	INT (PK)	Unique user ID
-full_name	VARCHAR(100)	User full name
-email	VARCHAR(100)	Email address
-phone	VARCHAR(15)	Mobile number
-wallet_balance	DECIMAL(10,2)	Wallet amount
-city	ENUM	User city
-created_at	TIMESTAMP	Account creation time
+<h2>Users Table</h2>
+
+<table border="1" cellpadding="10" cellspacing="0">
+    <tr>
+        <th>Column Name</th>
+        <th>Data Type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>user_id</td>
+        <td>INT (PK)</td>
+        <td>Unique User ID</td>
+    </tr>
+    <tr>
+        <td>full_name</td>
+        <td>VARCHAR(100)</td>
+        <td>User Full Name</td>
+    </tr>
+    <tr>
+        <td>email</td>
+        <td>VARCHAR(100)</td>
+        <td>User Email Address</td>
+    </tr>
+    <tr>
+        <td>phone</td>
+        <td>VARCHAR(15)</td>
+        <td>User Mobile Number</td>
+    </tr>
+    <tr>
+        <td>wallet_balance</td>
+        <td>DECIMAL(10,2)</td>
+        <td>Available Wallet Balance</td>
+    </tr>
+    <tr>
+        <td>city</td>
+        <td>ENUM</td>
+        <td>User City</td>
+    </tr>
+    <tr>
+        <td>created_at</td>
+        <td>TIMESTAMP</td>
+        <td>Account Creation Time</td>
+    </tr>
+</table>
 2️⃣ Drivers Table
 
 Stores driver registration and verification details.
