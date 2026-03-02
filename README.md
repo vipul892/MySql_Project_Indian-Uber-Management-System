@@ -26,6 +26,22 @@ The project focuses on database normalization, entity relationships, and real-wo
 
 The system consists of 7 main tables with properly defined Primary Keys and Foreign Key relationships.
 
+<style>
+    table {
+        width: 80%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    th, td {
+        border: 1px solid #333;
+        padding: 10px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+
 1️⃣ #**Users Table**#
 
 Stores passenger details.
@@ -74,18 +90,56 @@ Stores passenger details.
         <td>Account Creation Time</td>
     </tr>
 </table>
+
 2️⃣ Drivers Table
 
 Stores driver registration and verification details.
 
-Column Name	Data Type	Description
-driver_id	INT (PK)	Unique driver ID
-full_name	VARCHAR	Driver name
-aadhar_no	VARCHAR	Aadhaar number
-license_no	VARCHAR	Driving license
-rating	DECIMAL(3,2)	Driver rating
-is_active	TINYINT(1)	Active status
-joined_at	DATE	Joining date
+<h2>Drivers Table</h2>
+
+<table border="1" cellpadding="10" cellspacing="0">
+    <tr>
+        <th>Column Name</th>
+        <th>Data Type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>driver_id</td>
+        <td>INT (PK)</td>
+        <td>Unique Driver ID</td>
+    </tr>
+    <tr>
+        <td>full_name</td>
+        <td>VARCHAR(100)</td>
+        <td>Driver Name</td>
+    </tr>
+    <tr>
+        <td>aadhar_no</td>
+        <td>VARCHAR(20)</td>
+        <td>Aadhaar Number</td>
+    </tr>
+    <tr>
+        <td>license_no</td>
+        <td>VARCHAR(20)</td>
+        <td>Driving License Number</td>
+    </tr>
+    <tr>
+        <td>rating</td>
+        <td>DECIMAL(3,2)</td>
+        <td>Driver Rating</td>
+    </tr>
+    <tr>
+        <td>is_active</td>
+        <td>TINYINT(1)</td>
+        <td>Driver Active Status</td>
+    </tr>
+    <tr>
+        <td>joined_at</td>
+        <td>DATE</td>
+        <td>Joining Date</td>
+    </tr>
+</table>
+
 3️⃣ Vehicles Table
 
 Each driver is assigned one vehicle.
