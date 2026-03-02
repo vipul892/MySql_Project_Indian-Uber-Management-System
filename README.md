@@ -1,6 +1,7 @@
 **Indian Uber Management System** <br>
 Relational Database Project (MySQL) <br>
-📌** Project Overview** 
+
+📌**Project Overview** 
 
 The Indian Uber Management System is a relational database project designed to simulate a real-world ride-booking platform like Uber in India.
 
@@ -210,17 +211,12 @@ Stores emergency contact details for users.
 
 🔗 **Entity Relationships**
 
-One User ➝ Many Trips
-
-One Driver ➝ Many Trips
-
-One Driver ➝ One Vehicle
-
-One Trip ➝ One Payment
-
-One Trip ➝ One Review
-
-One User ➝ Many Emergency Contacts
+One **User** ➝ Many **Trips** <br>
+One **Driver** ➝ Many **Trips** <br>
+One **Driver** ➝ One **Vehicle** <br>
+One **Trip** ➝ One **Payment** <br>
+One **Trip** ➝ One **Review** <br>
+One **User** ➝ **Many Emergency Contacts** <br>
 
 ⚙️ **Key Features**
 
@@ -236,24 +232,21 @@ One User ➝ Many Emergency Contacts
 ✔ Transaction monitoring <br>
 
 📊 **Business Rules Implemented**
-
-Only active drivers can accept trips
-
-Payment allowed only for completed trips
-
-Reviews can be submitted only after trip completion
-
-Wallet balance auto-deducted when wallet payment selected
-
-One driver is assigned only one vehicle
+<ul>
+<li>Only active drivers can accept trips </li> <br>
+<li>Payment allowed only for completed trips</li><br>
+<li>Reviews can be submitted only after trip completion</li> <br> 
+<li>Wallet balance auto-deducted when wallet payment selected</li> <br>
+<li>One driver is assigned only one vehicle</li> <br>
+</ul>
 
 🛠️ **Technologies Used**
 
-MySQL
-SQL (DDL & DML)
-ER Modeling
-Database Normalization
-Relational Database Concepts
+MySQL <br>
+SQL (DDL & DML) <br>
+ER Modeling <br> 
+Database Normalization <br> 
+Relational Database Concepts <br>
 
 🧠 **System Workflow**
 
@@ -265,13 +258,19 @@ Trip gets completed
 Payment processed
 User submits rating & review
 
+<br>
+ 
 📷 **ER Diagram**
 
-![ER Diagram](er_diagram.png)
+![ER Diagram](uber_ER_Diagram.png)
+
+<br>
 
 🎯 **Project Objective**
 
 To design and implement a normalized and scalable relational database system for a ride-booking platform in India that ensures data integrity, efficient relationships, and smooth ride lifecycle management.
+
+<br>
 
 👨‍💻 **Author**
 
