@@ -25,22 +25,7 @@ The project focuses on database normalization, entity relationships, and real-wo
 🏗️ Database Architecture
 
 The system consists of 7 main tables with properly defined Primary Keys and Foreign Key relationships.
-
-<style>
-    table {
-        width: 80%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-    }
-    th, td {
-        border: 1px solid #333;
-        padding: 10px;
-        text-align: left;
-    }
-    th {
-        background-color: #f2f2f2;
-    }
-</style>
+  
 
 1️⃣ #**Users Table**#
 
@@ -91,7 +76,7 @@ Stores passenger details.
     </tr>
 </table>
 
-2️⃣ Drivers Table
+2️⃣ **Drivers Table**
 
 Stores driver registration and verification details.
 
@@ -140,60 +125,94 @@ Stores driver registration and verification details.
     </tr>
 </table>
 
-3️⃣ Vehicles Table
+3️⃣ 🚗 #**Vehicles Table**#
 
 Each driver is assigned one vehicle.
 
-Column Name	Data Type	Description
-vehicle_id	INT (PK)	Unique vehicle ID
-driver_id	INT (FK)	Linked driver
-model_name	VARCHAR	Vehicle model
-plate_no	VARCHAR	Registration number
-category	ENUM	Mini / Sedan / SUV
-4️⃣ Trips Table (Core Table)
+<table>
+        <tr>
+            <th>Column Name</th>
+            <th>Data Type</th>
+            <th>Description</th>
+        </tr>
+        <tr><td>vehicle_id</td><td>INT (PK)</td><td>Unique Vehicle ID</td></tr>
+        <tr><td>driver_id</td><td>INT (FK)</td><td>Linked Driver ID</td></tr>
+        <tr><td>model_name</td><td>VARCHAR(50)</td><td>Vehicle Model</td></tr>
+        <tr><td>plate_no</td><td>VARCHAR(20)</td><td>Registration Number</td></tr>
+        <tr><td>category</td><td>ENUM</td><td>UberGo / UberPremier / UberAuto / UberXL </td></tr>
+    </table>
+    
+4️⃣ **Trips Table (Core Table)**
 
 Manages ride bookings.
+<table>
+        <tr>
+            <th>Column Name</th>
+            <th>Data Type</th>
+            <th>Description</th>
+        </tr>
+        <tr><td>trip_id</td><td>INT (PK)</td><td>Unique Trip ID</td></tr>
+        <tr><td>user_id</td><td>INT (FK)</td><td>Passenger ID</td></tr>
+        <tr><td>driver_id</td><td>INT (FK)</td><td>Driver ID</td></tr>
+        <tr><td>pickup_loc</td><td>VARCHAR(100)</td><td>Pickup Location</td></tr>
+        <tr><td>dropoff_loc</td><td>VARCHAR(100)</td><td>Drop Location</td></tr>
+        <tr><td>distance_km</td><td>DECIMAL(5,2)</td><td>Trip Distance</td></tr>
+        <tr><td>fare_amount</td><td>DECIMAL(10,2)</td><td>Total Fare</td></tr>
+        <tr><td>status</td><td>ENUM</td><td> Completed / Cancelled</td></tr>
+        <tr><td>booking_time</td><td>DATETIME</td><td>Trip Booking Time</td></tr>
+    </table>
 
-Column Name	Data Type	Description
-trip_id	INT (PK)	Unique trip ID
-user_id	INT (FK)	Passenger
-driver_id	INT (FK)	Assigned driver
-pickup_loc	VARCHAR	Pickup location
-dropoff_loc	VARCHAR	Drop location
-distance_km	DECIMAL(5,2)	Distance
-fare_amount	DECIMAL(10,2)	Total fare
-status	ENUM	Booked / Ongoing / Completed / Cancelled
-booking_time	DATETIME	Trip booking time
-5️⃣ Payments Table
+
+5️⃣ **Payments Table**
 
 Stores transaction details.
 
-Column Name	Data Type	Description
-payment_id	INT (PK)	Payment ID
-trip_id	INT (FK)	Linked trip
-payment_method	ENUM	UPI / Card / Cash / Wallet
-transaction_status	ENUM	Success / Failed / Pending
-transaction_id	VARCHAR	Payment reference
-amount_paid	DECIMAL(10,2)	Paid amount
-6️⃣ Reviews Table
+<table>
+        <tr>
+            <th>Column Name</th>
+            <th>Data Type</th>
+            <th>Description</th>
+        </tr>
+        <tr><td>payment_id</td><td>INT (PK)</td><td>Payment ID</td></tr>
+        <tr><td>trip_id</td><td>INT (FK)</td><td>Linked Trip ID</td></tr>
+        <tr><td>payment_method</td><td>ENUM</td><td> UPI / Cash / PayTM / AmazonPay / Credit_Card</td></tr>
+        <tr><td>transaction_status</td><td>ENUM</td><td>Success / Failed </td></tr>
+        <tr><td>transaction_id</td><td>VARCHAR(50)</td><td>Transaction Reference</td></tr>
+        <tr><td>amount_paid</td><td>DECIMAL(10,2)</td><td>Paid Amount</td></tr>
+    </table>
+    
+6️⃣ **Reviews Table**
 
 Stores user ratings and feedback.
+ <table>
+        <tr>
+            <th>Column Name</th>
+            <th>Data Type</th>
+            <th>Description</th>
+        </tr>
+        <tr><td>review_id</td><td>INT (PK)</td><td>Review ID</td></tr>
+        <tr><td>trip_id</td><td>INT (FK)</td><td>Linked Trip ID</td></tr>
+        <tr><td>rating</td><td>INT</td><td>Rating (1–5)</td></tr>
+        <tr><td>feedback</td><td>TEXT</td><td>User Feedback</td></tr>
+    </table>
 
-Column Name	Data Type	Description
-review_id	INT (PK)	Review ID
-trip_id	INT (FK)	Linked trip
-rating	INT	Rating (1–5)
-feedback	TEXT	User feedback
-7️⃣ Emergency Contacts Table
+7️⃣ **Emergency Contacts Table**
 
 Stores emergency contact details for users.
 
-Column Name	Data Type	Description
-contact_id	INT (PK)	Contact ID
-user_id	INT (FK)	Linked user
-contact_name	VARCHAR	Emergency contact name
-contact_phone	VARCHAR	Contact number
-🔗 Entity Relationships
+<table>
+        <tr>
+            <th>Column Name</th>
+            <th>Data Type</th>
+            <th>Description</th>
+        </tr>
+        <tr><td>contact_id</td><td>INT (PK)</td><td>Contact ID</td></tr>
+        <tr><td>user_id</td><td>INT (FK)</td><td>Linked User ID</td></tr>
+        <tr><td>contact_name</td><td>VARCHAR(100)</td><td>Emergency Contact Name</td></tr>
+        <tr><td>contact_phone</td><td>VARCHAR(15)</td><td>Emergency Contact Number</td></tr>
+    </table>
+
+🔗 **Entity Relationships**
 
 One User ➝ Many Trips
 
